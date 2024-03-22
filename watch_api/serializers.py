@@ -37,13 +37,13 @@ class PlatformModelSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         """
-        Create and return a new `watch_movie` instance, given the validated data.
+        Create and return a new `watch_platform` instance, given the validated data.
         """
         return watch_platform.objects.create(**validated_data)
     
     def update(self, instance, validated_data):
         """
-        Update and return an existing `watch_movie` instance, given the validated data.
+        Update and return an existing `watch_platform` instance, given the validated data.
         """
         instance.Platform = validated_data.get('Platform', instance.Platform)
         instance.platform_name = validated_data.get('platform_name', instance.platform_name)
